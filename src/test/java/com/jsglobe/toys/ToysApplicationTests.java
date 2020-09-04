@@ -13,6 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ToysApplicationTests {
 
+    private static final String ROOT = "/";
+    private static final String PRODUCTS_ENDPOINT = "/product";
+
     @LocalServerPort
     private int localPort;
 
@@ -28,7 +31,14 @@ class ToysApplicationTests {
 
     @Test
     void should_return_200_for_root() {
-        final ResponseEntity<String> response = restTemplate.getForEntity("/", String.class);
+        final ResponseEntity<String> response = restTemplate.getForEntity(ROOT, String.class);
+
+        assertTrue(response.getStatusCode().is2xxSuccessful());
+    }
+
+    @Test
+    void should_return_200_for_products_end_point() {
+        final ResponseEntity<String> response = restTemplate.getForEntity(PRODUCTS_ENDPOINT, String.class);
 
         assertTrue(response.getStatusCode().is2xxSuccessful());
     }
