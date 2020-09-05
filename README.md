@@ -10,6 +10,7 @@ This service can be used for serving a list of products via a rest call.
  |**GET**|http://localhost:8080/| Swagger UI |
  |**GET**|http://localhost:8080/api-docs| Open API specification |
  |**GET**|http://localhost:8080/actuator/health| health endpoint |
+ |**GET**|http://localhost:8080/actuator/info| service information |
  |**GET**|http://localhost:8080/actuator/metrics| service metrics |
  
 ## How To
