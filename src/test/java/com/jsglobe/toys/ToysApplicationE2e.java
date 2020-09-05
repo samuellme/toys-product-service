@@ -1,6 +1,7 @@
 package com.jsglobe.toys;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jsglobe.toys.api.model.ErrorInfo;
 import lombok.Data;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.testcontainers.containers.GenericContainer;
@@ -26,6 +28,7 @@ class ToysApplicationE2e {
 
     private static final String ROOT = "/";
     private static final String PRODUCTS_ENDPOINT = "/product";
+    public static final String INVALID_ENDPOINT = "/invalid-request";
 
     @LocalServerPort
     private int localPort;
@@ -91,6 +94,16 @@ class ToysApplicationE2e {
         assertEquals(8.99, lastItem.price);
         assertEquals(8, lastItem.stock);
         assertEquals("s.Oliver", lastItem.brand);
+    }
+
+    @Test
+    void should_return_4xx_when_request_is_invalid() {
+        final var response = restTemplate.getForEntity(
+                INVALID_ENDPOINT,
+                ErrorInfo.class
+        );
+
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
 
     static class ResponseProductList extends ArrayList<ResponseProduct> {
