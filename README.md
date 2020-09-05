@@ -1,4 +1,4 @@
-# Toy Service [![Build Status](https://github.com/SiamandMaroufi/toys-produc-service/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/SiamandMaroufi/toys-produc-service/actions)
+# Toy Service [![Build Status](https://github.com/SiamandMaroufi/toys-product-service/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/SiamandMaroufi/toys-product-service/actions)
 This service can be used for serving a list of products via a rest call.
 
 # How To
