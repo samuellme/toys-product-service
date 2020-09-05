@@ -39,6 +39,7 @@ class ToysApplicationTests {
     @Test
     void should_return_200_for_products_end_point() {
         final ResponseEntity<String> response = restTemplate.getForEntity(PRODUCTS_ENDPOINT, String.class);
+        restTemplate.getForEntity(PRODUCTS_ENDPOINT, String.class);
 
         assertTrue(response.getStatusCode().is2xxSuccessful());
     }

@@ -4,6 +4,7 @@ import com.jsglobe.toys.api.mapper.ProductVmMapper;
 import com.jsglobe.toys.api.model.ProductVM;
 import com.jsglobe.toys.service.products.Product;
 import com.jsglobe.toys.service.products.ProductService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,7 @@ public class ProductsController {
     }
 
     @GetMapping("/product")
+    @Cacheable({"products"})
     public List<ProductVM> getAllProduct() {
         final List<Product> products = productService.getProducts();
         return productVmMapper.map(products);
