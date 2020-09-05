@@ -1,10 +1,13 @@
 package com.jsglobe.toys.api.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
 import lombok.Data;
 
+import java.io.Serializable;
 @Data
-public class ProductVM {
+@JsonRootName("Product")
+public class ProductVM implements Serializable {
     private final Long id;
     private final String name;
     private final Double price;

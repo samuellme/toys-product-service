@@ -1,0 +1,22 @@
+version: '3'
+services:
+  cache-server:
+    image: redis
+    networks:
+      - toy-network
+  toy-server:
+    build: .
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - SERVICE_REDIS_HOST=cache-server
+      - SERVICE_REDIS_PORT=6379
+      - SERVICE_REDIS_TTL_IN_SECONDS=900 # every 15 minutes
+    ports:
+      - 8080:8080
+    depends_on:
+      - cache-server
+    networks:
+      - toy-network
+networks:
+  toy-network:
+    driver: bridge

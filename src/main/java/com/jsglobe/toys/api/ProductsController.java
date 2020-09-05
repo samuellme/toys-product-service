@@ -24,7 +24,7 @@ public class ProductsController {
     }
 
     @GetMapping("/product")
-    @Cacheable({"products"})
+    @Cacheable("product")
     public List<ProductVM> getAllProduct() {
         final List<Product> products = productService.getProducts();
         return productVmMapper.map(products);
