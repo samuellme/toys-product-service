@@ -11,7 +11,7 @@ import org.springframework.http.ResponseEntity;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ToysApplicationTests {
+class ToysApplicationE2e {
 
     private static final String ROOT = "/";
     private static final String PRODUCTS_ENDPOINT = "/product";
