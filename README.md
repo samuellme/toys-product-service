@@ -1,7 +1,18 @@
-# Toy Service [![Build Status](https://github.com/SiamandMaroufi/toys-product-service/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/SiamandMaroufi/toys-product-service/actions)
+# Toy Service
+
 This service can be used for serving a list of products via a rest call.
 
-# How To
+## Endpoints
+
+ |Method|Endpoint|Descriptio|
+ |------|-------|-----|
+ |**GET**|http://localhost:8080/product| list of the products|
+ |**GET**|http://localhost:8080/| Swagger UI |
+ |**GET**|http://localhost:8080/api-docs| Open API specification |
+ |**GET**|http://localhost:8080/actuator/health| health endpoint |
+ |**GET**|http://localhost:8080/actuator/metrics| service metrics |
+ 
+## How To
 
 ### Quick start
 
