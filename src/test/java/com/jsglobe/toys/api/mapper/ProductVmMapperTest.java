@@ -11,12 +11,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProductVmMapperTest {
 
-    public static final boolean PRODUCT_STOCK = false;
     private static final long PRODUCT_ID = 1L;
     private static final String PRODUCT_NAME = "PRODUCT_NAME";
-    public static final String PRODUCT_BRAND = "PRODUCT_BRAND";
-    public static final double PRODUCT_OLD_PRICE = 12.01;
-    public static final double PRODUCT_PRICE = 12.34;
+    private static final String PRODUCT_BRAND = "PRODUCT_BRAND";
+    private static final double PRODUCT_OLD_PRICE = 12.01;
+    private static final double PRODUCT_PRICE = 12.34;
+    private static final long PRODUCT_STOCK = 0L;
 
     private final Product product = new Product(
             PRODUCT_ID,

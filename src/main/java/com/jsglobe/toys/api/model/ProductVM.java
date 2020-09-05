@@ -11,6 +11,6 @@ public class ProductVM {
 
     @JsonProperty("old_price")
     private final Double oldPrice;
-    private final Boolean stock;
+    private final Long stock;
     private final String brand;
 }
