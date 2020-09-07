@@ -34,6 +34,12 @@ $ mvn clean install
 $ java -jar target/toys-0.0.1.jar
 ``` 
 
+you can also use the MavenWrapper and the springboot plug in for running it:
+```
+$ redis-server &
+$ ./mvnw spring-boot:run  
+```
+
  ### Run tests
  
  for running tests you can use mvn:
@@ -41,3 +47,10 @@ $ java -jar target/toys-0.0.1.jar
  ```
 $ mvn clean verify
 ```
+
+or (via maven weapper)
+
+```
+$ ./mvnw clean verify
+```
+
