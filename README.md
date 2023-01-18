@@ -48,7 +48,7 @@ $ ./mvnw spring-boot:run
 $ mvn clean verify
 ```
 
-or (via maven weapper)
+or (via maven wrapper)
 
 ```
 $ ./mvnw clean verify
